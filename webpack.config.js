@@ -13,12 +13,12 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['docs']),
     new HtmlWebpackPlugin({ template: 'index.html' })
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'docs')
   },
   module: {
     rules: [{
