@@ -1,0 +1,14 @@
+/*
+  ITCSS: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+  1. Settings
+  2. Tools
+  3. Generic
+  4. Elements
+  5. Objects
+  6. Components
+  7. Utilities
+*/ 
+
+@import './settings/index.scss';
+@import './generic/index.scss';
+@import './components/index.scss';

@@ -1,0 +1,30 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 10px;
+  padding: 32px 16px;
+  
+  & > .input,
+  & > .btn {
+    font-size: 18px;
+    padding: 8px;
+    outline: none;
+  }
+
+  & > .input {
+    border: 1px solid $primary-color;
+  }
+
+  & > .input:focus {
+    border-width: 2px;
+    border-color: $primary-color-dark;
+  }
+
+  & > .btn {
+    min-width: 136px;
+    background: $primary-color;
+    color: $primary-color-text;
+    border-color: darken($primary-color, 0.5);
+    cursor: pointer;
+  }
+}

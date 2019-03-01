@@ -1,7 +1,7 @@
 import pubSub from '../pubSub';
-import producer from './producer';
 
-const result = document.querySelector('.result');
-pubSub.subscribe('Input/value', (value) => result.textContent = value);
+const input = document.querySelector('.input');
+const searchBtn = document.querySelector('.btn.search');
+const emit = () => pubSub.publish('Input/value', input.value);
 
-producer.start();
+export default searchBtn.addEventListener('click', () => emit());
