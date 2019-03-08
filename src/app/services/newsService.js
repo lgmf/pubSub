@@ -10,7 +10,7 @@ class NewsService {
   }
 
   async getNews(query) {
-    const url = `${this.endpoint}&page-size=32&q=${query}`;
+    const url = `${this.endpoint}&page-size=12&q=${query}`;
 
     pubSub.publish('News/loading', true);
 
