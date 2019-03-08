@@ -1,9 +1,10 @@
 .main {
-  padding: 0 64px;
+  position: relative;
+  padding: 0 64px 16px 64px;
 
   & > .list {
     display: grid;
-    grid-gap: 16px;
+    grid-gap: 8px;
   }
 
   & > .list > .item {
@@ -18,5 +19,12 @@
     background: $primary-color-dark;
     color: $primary-color-light;
     transform: scale(1.05);
+  }
+
+  @media screen and (min-width: '768px') {
+
+    & > .list {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

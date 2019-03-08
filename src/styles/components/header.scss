@@ -1,7 +1,6 @@
 .header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-column-gap: 10px;
+  display: flex;
+  justify-content: center;
   padding: 32px 16px;
   
   & > .input,
@@ -21,7 +20,6 @@
   }
 
   & > .btn {
-    min-width: 136px;
     background: $primary-color;
     color: $primary-color-text;
     border-color: darken($primary-color, 0.5);

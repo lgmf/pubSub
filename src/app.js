@@ -7,8 +7,7 @@ import './app/input/input';
 
 pubSub.subscribe('Input/value', query => newsService.getNews(query));
 
-pubSub.subscribe('News', news => {
-  console.log(news);
+pubSub.subscribe('News/data', news => {
   const list = document.querySelector('.list');
   list.innerHTML = '';
 
@@ -26,3 +25,17 @@ const createLink = (url, label, target = "_self") => {
   anchor.target = target;
   return anchor;
 }
+
+pubSub.subscribe('News/loading', loading => {
+  const clearList = () => document.querySelector('.list').innerHTML = '';
+  const showLoader = () => document.querySelector('.loader').classList.add('-shown');
+  const hideLoader = () => document.querySelector('.loader').classList.remove('-shown');
+
+  if (!loading) {
+    hideLoader();
+    return;
+  }
+
+  clearList();
+  showLoader();
+});

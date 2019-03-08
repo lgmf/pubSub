@@ -10,14 +10,20 @@ class NewsService {
   }
 
   async getNews(query) {
-    const url = `${this.endpoint}&page-size=10&q=${query}`;
+    const url = `${this.endpoint}&page-size=32&q=${query}`;
+
+    pubSub.publish('News/loading', true);
 
     try {
       const { data } = await get(url);
       const { response } = data;
-      pubSub.publish('News', response.results);
+
+      pubSub.publish('News/loading', false);
+      pubSub.publish('News/data', response.results);
+
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      pubSub.publish('News/loading', false);
     }
   }
 
